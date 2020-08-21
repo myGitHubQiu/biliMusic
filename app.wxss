@@ -1,0 +1,7 @@
+/* 全局引入公共icon img */
+@import '/static/iconfont/iconfont.wxss' ;
+
+body{
+  width: 100%;
+  height: 100%;
+}
