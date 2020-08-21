@@ -63,43 +63,23 @@
     <NavHeader title="排行榜" desc="热歌风向标"/>
 
     <!-- 内容区 -->
-    <swiper class="topListSwiper" next-margin="50rpx">
-      <swiper-item class="swiperItem">
-        <view class="swiperContent">
-          <text class="title">云音乐飙升榜 ></text>
-          <view class="musicContent">
-            <image class="musicImg" src="/static/images/nvsheng.jpg"></image>
-            <text class="count">1</text>
-            <text class="musicName">少年</text>
-          </view>
-          <view class="musicContent">
-            <image class="musicImg" src="/static/images/nvsheng.jpg"></image>
-            <text class="count">1</text>
-            <text class="musicName">少年</text>
-          </view>
-          <view class="musicContent">
-            <image class="musicImg" src="/static/images/nvsheng.jpg"></image>
-            <text class="count">1</text>
-            <text class="musicName">少年</text>
-          </view>
-        </view>
-      </swiper-item>
+    <swiper class="topListSwiper" next-margin="50rpx" duration="1000" autoplay="true">
 
-      <swiper-item class="swiperItem">
-        <view 
-          class="swiperContent"
-          wx:for="{{topLists.playlist}}"
-          wx:key="id"
-        >
+      <swiper-item 
+        class="swiperItem"
+        wx:for="{{topLists}}"
+        wx:key="id"
+      >
+        <view class="swiperContent">
           <text class="title">{{item.name}} ></text>
           <view 
-            class="musicContent"
-            wx:for="{{item}}"
+            class="musicContent" 
+            wx:for="{{item.list}}"
             wx:key="id"
           >
-            <image class="musicImg" src="{{item.creator.avatarUrl}}"></image>
-            <text class="count">1</text>
-            <text class="musicName">{{item.tracks.name}}</text>
+            <image class="musicImg" src="{{item.al.picUrl}}"></image>
+            <text class="count">{{index+1}}</text>
+            <text class="musicName">{{item.name}}</text>
           </view>
         </view>
       </swiper-item>

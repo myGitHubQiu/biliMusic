@@ -43,23 +43,30 @@ Page({
     })
 
     /********排行榜*******/
-    let arr = [0,1,2,3]
-    let index=0
-    let newArr = []
-    while(index<arr.length){
+    let idxArr = [0,1,2,3,4]
+    let len = idxArr.length
+    let topList = []
+    while(len--){
       wx.request({
         url: 'http://localhost:3000/top/list',
         data:{
-          idx:arr[index++]
+          idx:idxArr[len]
         },
         success:({data})=>{
-          console.log(data)
-          this.setData({
-            topLists:data
+          topList.push({
+            name:data.playlist.name,
+            id:data.playlist.id,
+            list:data.playlist.tracks.slice(0,3)
           })
+          this.setData({
+            topLists:topList
+          })
+          console.log(data)
         }
       })
-    } 
+    }
+   
+  
   },
 
   toRecommend(){
