@@ -1,4 +1,4 @@
-// pages/personal/personal.js
+// pages/login/login.js
 Page({
 
   /**
@@ -13,12 +13,6 @@ Page({
    */
   onLoad: function (options) {
 
-  },
-
-  handleToLogin(){
-    wx.navigateTo({
-      url: '/pages/login/login.wxml',
-    })
   },
 
   /**

@@ -5,7 +5,8 @@
     "pages/bili/bili",
     "pages/personal/personal",
     "pages/recommendSong/recommendSong",
-    "components/NavHeader/NavHeader"
+    "components/NavHeader/NavHeader",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",

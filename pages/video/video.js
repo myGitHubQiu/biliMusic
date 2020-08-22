@@ -1,18 +1,52 @@
-// pages/video/video.js
+// 引入request
+import request from '../../utils/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    videoNavList:[],
+    navId:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 获取导航列表数据
+    wx.request({
+      url: 'http://localhost:3000/video/group/list',
+      success:({data})=>{
+        // console.log(data)
+        const videoNavList = data.data.slice(0,20)
+        this.setData({
+          videoNavList,
+          // 设置第一个元素默认显示有下划线
+          navId:videoNavList[0].id
+        })
+        // onload后要加载视频列表
+        this.getVideoById(this.data.navId)
+      }
+    })
+  },
 
+  // 改变active
+  handleChangActive(e){
+    this.setData({
+      navId:e.currentTarget.dataset.id
+    })
+     // 点击切换后要加载视频列表
+     this.getVideoById(this.data.navId)
+    // console.log(typeof (e.currentTarget.dataset.id))
+  },
+
+  // 根据navId获取视频列表
+ async getVideoById(id){
+    const res = await request.get('video/group',{
+      id:id
+    })
+    console.log(res)
   },
 
   /**

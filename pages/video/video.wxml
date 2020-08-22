@@ -1,2 +1,175 @@
+<view class="videoContainer">
 
-<text>视频</text>
+  <!-- 头部区域 -->
+  <view class="header">
+    <image src="/static/images/video/video.jpg"></image>
+    <view class="search">
+      <input type="text" placeholder="再也没有" placeholder-class="placeholder"></input>
+    </view>
+    <image src="/static/images/logo.png"></image>
+  </view>
+
+  <!-- 导航区域 -->
+   <scroll-view
+      class="videoNav"
+      enable-flex
+      scroll-x
+      scroll-into-view="{{'scroll' + navId}}"
+      scroll-with-animation
+  >
+    <view 
+      class="navItem" 
+      wx:for="{{videoNavList}}"
+      wx:key="id"
+      
+    >
+      <view 
+        class="navItemContent {{item.id === navId?'active':''}}" 
+        bindtap="handleChangActive"
+        data-id="{{item.id}}"
+        id="{{'scroll'+item.id}}"
+      >
+      {{item.name}}
+      </view>
+    </view>
+  
+  </scroll-view>
+
+  <!-- 视频列表 -->
+  <scroll-view class="videoList" refresher-enabled scroll-y>
+    <view class="videoItem">
+      <video></video>
+      <image class="coverImg common" src="/static/images/nvsheng.jpg"></image>
+      <view class="content">love</view>
+      <view class="footer">
+        <image class="avatar" src="/static/images/nvsheng.jpg"></image>
+        <text class="nickName">3333</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+            <text class="count">1111</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+            <text class="count">2222</text>
+          </text>
+          <button open-type="share" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <view class="videoItem">
+      <image class="coverImg common" src="/static/images/nvsheng.jpg"></image>
+      <view class="content">love</view>
+      <view class="footer">
+        <image class="avatar" src="/static/images/nvsheng.jpg"></image>
+        <text class="nickName">3333</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+            <text class="count">1111</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+            <text class="count">2222</text>
+          </text>
+          <button open-type="share" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <view class="videoItem">
+      <image class="coverImg common" src="/static/images/nvsheng.jpg"></image>
+      <view class="content">love</view>
+      <view class="footer">
+        <image class="avatar" src="/static/images/nvsheng.jpg"></image>
+        <text class="nickName">3333</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+            <text class="count">1111</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+            <text class="count">2222</text>
+          </text>
+          <button open-type="share" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="videoItem">
+      <image class="coverImg common" src="/static/images/nvsheng.jpg"></image>
+      <view class="content">love</view>
+      <view class="footer">
+        <image class="avatar" src="/static/images/nvsheng.jpg"></image>
+        <text class="nickName">3333</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+            <text class="count">1111</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+            <text class="count">2222</text>
+          </text>
+          <button open-type="share" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="videoItem">
+      <image class="coverImg common" src="/static/images/nvsheng.jpg"></image>
+      <view class="content">love</view>
+      <view class="footer">
+        <image class="avatar" src="/static/images/nvsheng.jpg"></image>
+        <text class="nickName">3333</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+            <text class="count">1111</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+            <text class="count">2222</text>
+          </text>
+          <button open-type="share" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <view class="videoItem">
+      <image class="coverImg common" src="/static/images/nvsheng.jpg"></image>
+      <view class="content">love</view>
+      <view class="footer">
+        <image class="avatar" src="/static/images/nvsheng.jpg"></image>
+        <text class="nickName">3333</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+            <text class="count">1111</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+            <text class="count">2222</text>
+          </text>
+          <button open-type="share" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
